@@ -3523,6 +3523,13 @@ html:not(.mobile) .wow-p{
     line-height:1;
     white-space:nowrap;
 }
+/* Ensure subtitle and title are centered within the nav logo */
+.nav-logo-wrap .logo .site-subtitle,
+.nav-logo-wrap .logo .site-title{
+    display: block;
+    width: 100%;
+    text-align: center;
+}
 .nav-logo-wrap .logo .site-title-roman{
     font-variant-numeric: small-caps;
     font-weight:700;
@@ -3538,6 +3545,26 @@ html:not(.mobile) .wow-p{
     color:var(--color-gray-1);
     margin-top:2px;
 }
+
+/* Footer text-logo styling: bold top line and smaller centered subtitle */
+.footer .footer-logo .site-logo{display:flex;flex-direction:column;align-items:flex-start;justify-content:flex-start}
+.footer .footer-logo .site-title{font-weight:800;font-size:18px;line-height:1;color:var(--color-dark-1)}
+.footer .footer-logo .site-subtitle{font-size:11px;line-height:1;margin-top:6px;letter-spacing:2px;text-transform:uppercase;color:var(--color-gray-1)}
+.footer .footer-logo p{margin-top:10px}
+
+/* Layout for inner footer logo wrapper to center subtitle under the title while keeping whole logo left-aligned */
+.footer .footer-logo .footer-logo-inner{display:inline-block;text-align:center}
+.footer .footer-logo .footer-site-title{display:block;font-weight:800;font-size:18px}
+.footer .footer-logo .footer-site-subtitle{display:block;font-size:11px;margin-top:6px;letter-spacing:2px;text-transform:uppercase;color:var(--color-gray-1)}
+
+/* Make the footer-style logo work in the nav too */
+.nav-logo-wrap .logo .footer-logo-inner{display:inline-block;text-align:center}
+.nav-logo-wrap .logo .footer-site-title{display:block;font-weight:800;font-size:18px}
+.nav-logo-wrap .logo .footer-site-subtitle{display:block;font-size:11px;margin-top:4px;letter-spacing:2px;text-transform:uppercase;color:var(--color-gray-1)}
+
+/* Reduce vertical spacing for both logos */
+.nav-logo-wrap .logo .site-logo,
+.footer .footer-logo .site-logo{padding-top:6px;padding-bottom:6px}
 .nav-logo-wrap .logo:before,
 .nav-logo-wrap .logo:after{
     display: none;
@@ -12401,3 +12428,17 @@ html:not(.mobile) .owl-animate-fadeInDown{
 .works-grid.grid-intro-2 .work-item .work-descr{
     font-size: 16px;
 }
+
+/* Ensure subtitle used with mark-decoration-1 only underlines the text itself
+   (fixes case where site-subtitle was display:block and decoration stretched full width) */
+.nav-logo-wrap .logo .site-subtitle.mark-decoration-1,
+.footer .footer-logo .site-subtitle.mark-decoration-1{
+    display: inline-block !important;
+    width: auto !important;
+    margin: 0 auto; /* center the underline element within its container */
+}
+
+/* Reduce vertical spacing for logos (nav + footer) */
+.nav-logo-wrap .logo .site-title{margin-bottom:2px}
+.nav-logo-wrap .logo .site-subtitle{margin-top:0}
+.footer .footer-logo .site-subtitle{margin-top:0}
