@@ -12438,6 +12438,21 @@ html:not(.mobile) .owl-animate-fadeInDown{
     margin: 0 auto; /* center the underline element within its container */
 }
 
+/* About section: responsive descriptive paragraphs */
+/* Small screens (mobile): use .section-descr-small */
+.section-descr-small{
+    font-size:14px;
+    line-height:1.45;
+}
+
+/* Wider screens: use .section-descr-medium (overrides small where present) */
+@media (min-width: 768px){
+    .section-descr-medium{
+        font-size:18px;
+        line-height:1.6;
+    }
+}
+
 /* Reduce vertical spacing for logos (nav + footer) */
 .nav-logo-wrap .logo .site-title{margin-bottom:2px}
 .nav-logo-wrap .logo .site-subtitle{margin-top:0}
