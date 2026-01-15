@@ -1393,6 +1393,15 @@ function init_bg_video(){
 function init_wow(){
     (function($){
         
+        // Helper to check if element is in viewport
+        function isElementInViewport(el) {
+            var rect = el.getBoundingClientRect();
+            return (
+                rect.top < window.innerHeight &&
+                rect.bottom > 0
+            );
+        }
+        
         setTimeout(() => {
             
            /* Wow init */
@@ -1412,7 +1421,13 @@ function init_wow(){
             });
             
             if ($("body").hasClass("appear-animate")){
-               wow.init();            
+               wow.init();
+               // Immediately mark already-visible elements as animated to prevent flash
+               $(".wow").each(function(){
+                   if (isElementInViewport(this)) {
+                       $(this).addClass("animated");
+                   }
+               });
             } else{
                 $(".wow").css("opacity", "1");
             }
@@ -1434,7 +1449,13 @@ function init_wow(){
             });
             
             if ($("body").hasClass("appear-animate")){
-               wow_p.init();            
+               wow_p.init();
+               // Immediately mark already-visible elements as animated to prevent flash
+               $(".wow-p").each(function(){
+                   if (isElementInViewport(this)) {
+                       $(this).addClass("animated");
+                   }
+               });
             } else{
                 $(".wow-p").css("opacity", "1");
             }
@@ -1448,7 +1469,7 @@ function init_wow(){
                 $(".wow-menubar").css("opacity", "1");
             }                        
         
-        }, "100"); 
+        }, "10"); 
         
         /* Splitting JS accessibility fix */
            
