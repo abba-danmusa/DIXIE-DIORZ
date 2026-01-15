@@ -3031,8 +3031,7 @@ html:not(.mobile) .appear-animate .charsAnimIn .char{
         transform: none !important;
     }
 }
-.charsAnimIn.animated .char,
-.mobile .charsAnimIn .char{
+.charsAnimIn.animated .char{
     opacity: 1;
     transform: none;
 }
@@ -3056,8 +3055,7 @@ html:not(.mobile) .appear-animate .charsAnimIn-1 .char{
         transform: none !important;
     }
 }
-.charsAnimIn-1.animated .char,
-.mobile .charsAnimIn-1 .char{
+.charsAnimIn-1.animated .char{
     opacity: 1;
     transform: none;
 }
@@ -3081,8 +3079,7 @@ html:not(.mobile) .appear-animate .charsAnimIn-2 .char{
         transform: none !important;
     }
 }
-.charsAnimIn-2.animated .char,
-.mobile .charsAnimIn-2 .char{
+.charsAnimIn-2.animated .char{
     opacity: 1;
     transform: none;
 }
@@ -3107,8 +3104,7 @@ html:not(.mobile) .appear-animate .charsAnimInLong .char{
         transform: none !important;
     }
 }
-.charsAnimInLong.animated .char,
-.mobile .charsAnimInLong .char{
+.charsAnimInLong.animated .char{
     opacity: 1;
     transform: none;
 }
@@ -3133,8 +3129,7 @@ html:not(.mobile) .appear-animate .charsAnimInLong-1 .char{
         transform: none !important;
     }
 }
-.charsAnimInLong-1.animated .char,
-.mobile .charsAnimInLong-1 .char{
+.charsAnimInLong-1.animated .char{
     opacity: 1;
     transform: none;
 }
@@ -3159,8 +3154,7 @@ html:not(.mobile) .appear-animate .wordsAnimIn .word{
         transform: none !important;
     }
 }
-.wordsAnimIn.animated .word,
-.mobile .wordsAnimIn .word{
+.wordsAnimIn.animated .word{
     opacity: 1;
     transform: none;
 }
@@ -3186,9 +3180,8 @@ html:not(.mobile) .appear-animate .linesAnimIn .word{
         transform: none !important;
     }
 }
-.linesAnimIn.animated .word,
-.mobile .linesAnimIn .word{
-    opacity: 1;   
+.linesAnimIn.animated .word{
+    opacity: 1;
     transform: none;
 }
 
@@ -3213,8 +3206,7 @@ html:not(.mobile) .appear-animate .linesAnimInLong .word{
         transform: none !important;
     }
 }
-.linesAnimInLong.animated .word,
-.mobile .linesAnimInLong .word{
+.linesAnimInLong.animated .word{
     opacity: 1;   
     transform: none;
 }
