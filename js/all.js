@@ -1,5 +1,23 @@
 (function($){
-    "use strict"; // Start of use strict    
+    "use strict"; // Start of use strict
+    
+    /* Helper to check if element is in viewport */
+    function isElementInViewport(el) {
+        var rect = el.getBoundingClientRect();
+        return (
+            rect.top < window.innerHeight &&
+            rect.bottom > 0
+        );
+    }
+    
+    /* Immediately mark viewport elements as animated to prevent flash */
+    if ($("body").hasClass("appear-animate")) {
+        $(".wow, .wow-p").each(function(){
+            if (isElementInViewport(this)) {
+                $(this).addClass("animated");
+            }
+        });
+    }
     
     /* ---------------------------------------------
      Scripts initialization
@@ -1393,15 +1411,6 @@ function init_bg_video(){
 function init_wow(){
     (function($){
         
-        // Helper to check if element is in viewport
-        function isElementInViewport(el) {
-            var rect = el.getBoundingClientRect();
-            return (
-                rect.top < window.innerHeight &&
-                rect.bottom > 0
-            );
-        }
-        
         setTimeout(() => {
             
            /* Wow init */
@@ -1422,12 +1431,6 @@ function init_wow(){
             
             if ($("body").hasClass("appear-animate")){
                wow.init();
-               // Immediately mark already-visible elements as animated to prevent flash
-               $(".wow").each(function(){
-                   if (isElementInViewport(this)) {
-                       $(this).addClass("animated");
-                   }
-               });
             } else{
                 $(".wow").css("opacity", "1");
             }
@@ -1450,12 +1453,6 @@ function init_wow(){
             
             if ($("body").hasClass("appear-animate")){
                wow_p.init();
-               // Immediately mark already-visible elements as animated to prevent flash
-               $(".wow-p").each(function(){
-                   if (isElementInViewport(this)) {
-                       $(this).addClass("animated");
-                   }
-               });
             } else{
                 $(".wow-p").css("opacity", "1");
             }

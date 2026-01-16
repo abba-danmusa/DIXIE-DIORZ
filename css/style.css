@@ -3010,6 +3010,18 @@ a.bg-video-button-pause{
 /* ==============================
    Custom appear animation
    ============================== */
+
+/*
+ * Hide .wow elements until they're animated to prevent flash
+ */
+.appear-animate .wow,
+.appear-animate .wow-p {
+    visibility: hidden;
+}
+.appear-animate .wow.animated,
+.appear-animate .wow-p.animated {
+    visibility: visible;
+}
   
 /*
  * Splitting JS chars animation
